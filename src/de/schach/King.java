@@ -9,7 +9,7 @@ public class King extends ChessPiece
     
     public boolean validMove(int row, int col){
         if(ChessBoard.getPiece(row,col) != null){
-                    if(!ChessBoard.getPiece(row,col).equals(this.color)){
+                    if(!ChessBoard.getPiece(row,col).getColor().equals(this.color)){
                         return Math.abs(this.row-row)<=1 && Math.abs(this.col-col)<=1;
                     }
             return false;

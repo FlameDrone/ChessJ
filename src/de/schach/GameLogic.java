@@ -49,6 +49,7 @@ public class GameLogic {
 						ChessBoard.setPiece(row1, col1, null);
 						piece.setRow(row2);
 						piece.setCol(col2);
+						piece.setHasMoved(true);
 						return true;
 					}
 				}
