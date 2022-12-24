@@ -38,7 +38,7 @@ public class Bishop extends ChessPiece
     }
 
     public char getSymbol(){
-        if(this.color == "White"){
+        if(this.color.equals("White")){
             return 'B';
         }
         return 'b';

@@ -18,7 +18,7 @@ public class King extends ChessPiece
     }
 
     public char getSymbol(){
-        if(this.color == "White"){
+        if(this.color.equals("White")){
             return 'K';
         }
         return 'k';

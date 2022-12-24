@@ -18,7 +18,7 @@ public class Knight extends ChessPiece
     }
 
     public char getSymbol(){
-        if(this.color == "White"){
+        if(this.color.equals("White")){
             return 'N';
         }
         return 'n';

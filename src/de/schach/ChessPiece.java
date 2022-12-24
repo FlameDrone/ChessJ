@@ -5,14 +5,16 @@ public abstract class ChessPiece
     protected int col;
     protected String color;
     protected boolean hasMoved;
+
+    protected boolean wasCaptured;
     public ChessPiece(int row, int col, String color)
     {
         this.row = row;
         this.col = col;
         this.color = color;
         this.hasMoved = false;
+        boolean wasCaptured = false;
     }
-
     
     public int getRow(){
         return this.row;
@@ -34,10 +36,6 @@ public abstract class ChessPiece
         return this.color;
     }
 
-    public void setColor(String color){
-        this.color = color;
-    }
-
     public boolean getHasMoved(){
         return this.hasMoved;
     }
@@ -47,7 +45,15 @@ public abstract class ChessPiece
     }
     
     public abstract char getSymbol();
-    
+
+    public boolean getWasCaptured() {
+        return wasCaptured;
+    }
+
+    public void setWasCaptured(boolean wasCaptured) {
+        this.wasCaptured = wasCaptured;
+    }
+
     public abstract boolean validMove(int row, int col);
 
 }

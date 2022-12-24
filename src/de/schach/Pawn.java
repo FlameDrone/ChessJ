@@ -7,14 +7,14 @@ public class Pawn extends ChessPiece {
 	}
 
 	public boolean validMove(int row, int col) {
-		boolean correct = false;
+		boolean correct;
 		if (this.getColor().equals("White")) {
-			if (this.getHasMoved() == false)
+			if (!this.getHasMoved() )
 				correct =  (row == this.getRow() + 2 || row == this.getRow() + 1) && col == this.getCol();
 			else
 				correct = (row == this.getRow() + 1 && col == this.getCol());
 		} else {
-			if (this.getHasMoved() == false)
+			if (!this.getHasMoved())
 				correct = (row == this.getRow() - 2 || row == this.getRow() - 1) && col == this.getCol();
 			else
 				correct = (row == this.getRow() - 1 && col == this.getCol());
@@ -22,7 +22,6 @@ public class Pawn extends ChessPiece {
 		if(ChessBoard.getPiece(row, col) == null) {
 			return correct;
 		} else if (!ChessBoard.getPiece(row, col).getColor().equals(color)) {
-			System.out.println(1);
 			if(this.color.equals("White")){
 				return row == this.row+1 && Math.abs(this.col-col) == 1 && ChessBoard.getPiece(row,col).getColor().equals("Black");
 			}
@@ -35,7 +34,7 @@ public class Pawn extends ChessPiece {
 	}
 
 	public char getSymbol(){
-		if(this.color == "White"){
+		if(this.color.equals("White")){
 			return 'P';
 		}
 		return 'p';

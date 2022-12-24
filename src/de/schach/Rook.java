@@ -9,7 +9,7 @@ public class Rook extends ChessPiece {
     public boolean validMove(int row, int col) {
         int x = 1;
         if (ChessBoard.getPiece(row, col) != null) {
-            if (ChessBoard.getPiece(row, col).equals(this.color)) {
+            if (ChessBoard.getPiece(row, col).getColor().equals(this.color)) {
                 return false;
             }
         }
@@ -31,7 +31,7 @@ public class Rook extends ChessPiece {
                 }
             }
         }
-        if (this.col == col) {
+        else if (this.col == col) {
             if (this.row > row) {
                 while (row != this.row - x) {
                     if (ChessBoard.getPiece(this.row - x, col) != null) {
@@ -49,11 +49,14 @@ public class Rook extends ChessPiece {
                 }
             }
         }
+        else {
+            return false;
+        }
         return true;
     }
 
     public char getSymbol() {
-        if (this.color == "White") {
+        if (this.color.equals("White")) {
             return 'R';
         }
         return 'r';

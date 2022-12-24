@@ -1,7 +1,5 @@
 package de.schach;
 
-import java.util.TreeMap;
-
 public class Queen extends ChessPiece
 {
 
@@ -78,7 +76,7 @@ public class Queen extends ChessPiece
     }
 
     public char getSymbol(){
-        if(this.color == "White"){
+        if(this.color.equals("White")){
             return 'Q';
         }
         return 'q';
